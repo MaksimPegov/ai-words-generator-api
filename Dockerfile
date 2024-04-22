@@ -13,6 +13,9 @@ COPY main ./main
 # Install API dependencies
 RUN pipenv install --system --deploy
 
+ARG OPENAI_API_KEY
+ENV OPENAI_API_KEY=$OPENAI_API_KEY
+
 # Start app
 EXPOSE 5001
 ENTRYPOINT ["/usr/src/app/start.sh"]
