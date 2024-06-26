@@ -10,4 +10,4 @@ docker rm words-generator
 docker build --build-arg OPENAI_API_KEY=$(grep OPENAI_API_KEY .env | cut -d '=' -f2) -t words-generator:latest .
 
 # Run a new Docker container
-docker run --name words-generator -d -p 5001:5001 words-generator:latest
+docker run --name words-generator -d -p 1001:1001 words-generator:latest
