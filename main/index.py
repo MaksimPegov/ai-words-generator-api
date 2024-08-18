@@ -11,7 +11,8 @@ prompt_file_path = 'main/system-context.txt'
 
 app = Flask(__name__)
 client = OpenAI()
-CORS(app)
+
+cors = CORS(app, resources={r"/generate": {"origins": "https://words-generator.up.railway.app"}})
 
 @app.route('/generate', methods=['POST'])
 def generate():
